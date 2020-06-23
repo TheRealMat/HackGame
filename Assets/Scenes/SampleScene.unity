@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCanvas: {fileID: 585071298}
   inputField: {fileID: 987335699}
+  commandsList: {fileID: 1030426142}
 --- !u!1 &1893773142
 GameObject:
   m_ObjectHideFlags: 0

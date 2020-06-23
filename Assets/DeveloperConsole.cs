@@ -12,11 +12,21 @@ namespace Console
         [SerializeField] public TMP_Text uiCanvas = null;
         [SerializeField] public TMP_InputField inputField = null;
 
+
+        // ------ this needs to be rethought ------ //
+
+        public CommandsList commandsList;
         private readonly IEnumerable<IConsoleCommand> commands;
         public DeveloperConsole(IEnumerable<IConsoleCommand> commands)
         {
-            this.commands = commands;
+            this.commands = commandsList.commands;
         }
+
+        // ------ this needs to be rethought ------ //
+
+
+
+
 
         public void ProcessCommand(string inputValue)
         {
