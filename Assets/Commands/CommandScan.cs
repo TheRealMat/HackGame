@@ -9,6 +9,7 @@ namespace Console
     {
         public override bool Process(string[] args, DeveloperConsole console)
         {
+            console.uiCanvas.text += "\n" + $"{console.currentNode.nodeName} {console.currentNode.nodeIP}";
 
             foreach (Node node in console.currentNode.connectedNodes)
             {
