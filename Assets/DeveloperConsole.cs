@@ -17,7 +17,7 @@ namespace Console
         // ------ this needs to be rethought ------ //
 
         public CommandsList commandsList;
-        private IEnumerable<IConsoleCommand> commands;
+        public IEnumerable<IConsoleCommand> commands { get; set; }
         //public DeveloperConsole(IEnumerable<IConsoleCommand> commands)
         //{
         //    this.commands = commandsList.commands;

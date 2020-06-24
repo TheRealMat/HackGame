@@ -715,6 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commands:
   - {fileID: 11400000, guid: ffc0d5f7382a3ab49a16fdbe213b5a9c, type: 2}
+  - {fileID: 11400000, guid: af5ea07fe5592b24ea29cff361d30ef2, type: 2}
 --- !u!1 &1156801851
 GameObject:
   m_ObjectHideFlags: 0
