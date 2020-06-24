@@ -14,6 +14,10 @@ namespace Console
         [SerializeField] public TMP_InputField inputField = null;
         [SerializeField] public Node currentNode = null;
 
+        // implement something like this
+        [SerializeField] public string terminalPrefix = "> ";
+
+
 
 
         // ------ this needs to be rethought ------ //

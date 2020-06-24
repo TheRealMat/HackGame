@@ -10,9 +10,9 @@ namespace Console
         // this is kind of bad. maybe i can override inputfield instead
         // overriding inputfield turned out to be a pain in the ass
 
-        [SerializeField] private TMP_InputField inputField;
-        [SerializeField] private TMP_Text text;
-        [SerializeField] private DeveloperConsole console;
+        [SerializeField] private TMP_InputField inputField = null;
+        [SerializeField] private TMP_Text text = null;
+        [SerializeField] private DeveloperConsole console = null;
 
         private void Start()
         {
