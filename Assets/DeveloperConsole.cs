@@ -40,8 +40,10 @@ namespace Console
             // there is a weird white space that i'm replacing
             commandInput = Regex.Replace(commandInput, "​", "");
 
+            uiCanvas.text += "\n" + inputValue;
             ProcessCommand(commandInput, args);
             inputField.text = string.Empty;
+
         }
 
         public void ProcessCommand(string commandInput, string[] args)

@@ -24,7 +24,7 @@ namespace Console
         }
         private void Update()
         {
-            if (inputField.IsActive() && Input.GetKeyDown(KeyCode.Return))
+            if (inputField.IsActive() && inputField.text.Length != 0 && Input.GetKeyDown(KeyCode.Return))
             {
                 console.ProcessCommand(text.text);
             }
