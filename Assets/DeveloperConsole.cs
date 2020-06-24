@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using System.Text.RegularExpressions;
 
 namespace Console
 {
@@ -16,14 +17,16 @@ namespace Console
         // ------ this needs to be rethought ------ //
 
         public CommandsList commandsList;
-        private readonly IEnumerable<IConsoleCommand> commands;
-        public DeveloperConsole(IEnumerable<IConsoleCommand> commands)
+        private IEnumerable<IConsoleCommand> commands;
+        //public DeveloperConsole(IEnumerable<IConsoleCommand> commands)
+        //{
+        //    this.commands = commandsList.commands;
+        //}
+        private void Start()
         {
             this.commands = commandsList.commands;
         }
-
         // ------ this needs to be rethought ------ //
-
 
 
 
@@ -34,6 +37,9 @@ namespace Console
             string commandInput = inputSplit[0];
             string[] args = inputSplit.Skip(1).ToArray();
 
+            // there is a weird white space that i'm replacing
+            commandInput = Regex.Replace(commandInput, "​", "");
+
             ProcessCommand(commandInput, args);
             inputField.text = string.Empty;
         }
@@ -42,7 +48,7 @@ namespace Console
         {
             foreach (var command in commands)
             {
-                if (!commandInput.Equals(StringComparison.OrdinalIgnoreCase))
+                if (!commandInput.Equals(command.CommandWord, StringComparison.InvariantCultureIgnoreCase))
                 {
                     continue;
                 }
