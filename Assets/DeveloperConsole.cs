@@ -12,6 +12,8 @@ namespace Console
     {
         [SerializeField] public TMP_Text uiCanvas = null;
         [SerializeField] public TMP_InputField inputField = null;
+        [SerializeField] public Node currentNode = null;
+
 
 
         // ------ this needs to be rethought ------ //
@@ -33,12 +35,14 @@ namespace Console
 
         public void ProcessCommand(string inputValue)
         {
+            // there is a weird white space that i'm replacing
+            inputValue = Regex.Replace(inputValue, "​", "");
+
             string[] inputSplit = inputValue.Split(' ');
             string commandInput = inputSplit[0];
             string[] args = inputSplit.Skip(1).ToArray();
 
-            // there is a weird white space that i'm replacing
-            commandInput = Regex.Replace(commandInput, "​", "");
+
 
             uiCanvas.text += "\n" + inputValue;
             ProcessCommand(commandInput, args);
